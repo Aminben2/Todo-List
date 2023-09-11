@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #ccc;
+}
+.con {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.app {
+  width: 100%;
+  background-color: #ffff;
+  padding: 30px 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.app h1 {
+  color: rgb(64, 67, 103);
+}
+.todo {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0px 20px;
+  border-bottom: 1px solid rebeccapurple;
+  animation-name: show;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  transition: all 1s linear;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.content {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: larger;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.todo::before {
+  content: "";
+  position: absolute;
+  top: 31px;
+  left: -5px;
+  background-color: rgb(82, 221, 131);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  column-gap: 20px;
+  transition: all 1s ease;
+}
+.delete,
+.edit {
+  display: none;
+  background: none;
+  border: none;
+  width: 10px;
+  transition: all 1s ease;
+}
+.todo:hover .delete,
+.todo:hover .edit {
+  display: block;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+form input {
+  padding: 10px;
+  width: 68%;
+  border-radius: 5px;
+  border: none;
+  background-color: #e3dede;
+}
+form input:focus {
+  outline: 2px solid rebeccapurple;
+}
+
+form button {
+  background-color: rebeccapurple;
+  color: #ffff;
+  border: none;
+  width: 30%;
+  border-radius: 5px;
+}
+.error {
+  background-color: rgb(249, 150, 150);
+  border: 1px solid #900;
+  color: #900;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
